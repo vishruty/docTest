@@ -1,0 +1,154 @@
+BOOTSTRAP
+Hey guys... today we are here to discuss about bootstrap. So what the heck is bootstrap?
+According to the official website of bootstrap which is https://getbootstrap.com, Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web. Sounds great! Now how do I use it?
+PREREQUISITE
+Just now I said that it is html and CSS framework, so yes obviously you need to know that and for that you may read my previous post on html and css.
+Bootstrap is a free and open-source front-end framework for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other  components, as well as optional JavaScript extensions. Unlike many web frameworks, it concerns itself with front-end development only.
+To make sure that the application you are developing works on all the devices i.e from large sized desktops to the tiny mobile screens, and we don’t have to code differently for them, bootstrap is used. This is one of the reasons. Below is the list of all the advantages of bootstrap.
+
+INSTALLATION
+ Bootstrap provides you with 2 options-
+Either you can download all the files to you machine for the link https://getbootstrap.com/docs/4.0/getting-started/download/ and them link them up in your HTML code or else you can use CDN (Content Delivery Network). In order if you  go ahead with CDN then the following code has to be added in your HTML code.
+<meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+1. Bootstrap Grid System
+Bootstrap's grid system allows up to 12 columns across the page.
+If you do not want to use all 12 columns individually, you can group the columns together to create wider columns:
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+span 1
+ span 4
+ span 4
+ span 4
+span 4
+span 8
+span 6
+span 6
+span 12
+Bootstrap's grid system is responsive, and the columns will re-arrange automatically depending on the screen size.
+
+2. Grid Classes
+The Bootstrap grid system has four classes:
+xs (for phones - screens less than 768px wide)
+sm (for tablets - screens equal to or greater than 768px wide)
+md (for small laptops - screens equal to or greater than 992px wide)
+lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+The classes above can be combined to create more dynamic and flexible layouts.
+
+Basic Structure of a Bootstrap Grid
+In bootstrap the column cells are initializes using the syntax < div class=”col-sm-4”>
+Where sm signifies that we are building according to a small device and 4 signifies 4 columns. So sm and column number can be changed as per the need.
+Container
+It contains all the elements of the page and applies responsive properties to them.
+It is of 2 types:
+1. Container
+2. Container-fluid
+Container does not cover the entire width of the screen whereas container-width covers the entire width.
+Media queries
+Since Bootstrap is developed to be mobile first, we use a handful of media queries to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths allow us to scale up elements as the viewport changes.
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+
+
+Responsive images
+Images in your webpage should be responsive. In case you find they are not, you can add <img class=”img-fluid” src=.....> or instead of img-fluid you can use img-responsive . Though img-fluid has been added in bootstrap4 and img-responsive was in bootstrap3 but still img-responsive is what worked for me.The img-responsive class applies display: block and max-width: 100% and height: auto to the image:
+ 
+CAROUSEL
+If we want to add the element where the images slide periodically or we can slide them by ourselves using the left right navigation buttons, carousel may be used.
+Below is the code of carousel
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+ <!-- Indicators -->
+ <ol class="carousel-indicators">
+ <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+ <li data-target="#myCarousel" data-slide-to="2"></li>
+ </ol>
+
+ <!-- Wrapper for slides -->
+ <div class="carousel-inner">
+ <div class="item active">
+ <img src="la.jpg" alt="Los Angeles">
+ </div>
+
+ <div class="item">
+ <img src="chicago.jpg" alt="Chicago">
+ </div>
+
+ <div class="item">
+ <img src="ny.jpg" alt="New York">
+ </div>
+ </div>
+
+ <!-- Left and right controls -->
+ <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+ <span class="glyphicon glyphicon-chevron-left"></span>
+ <span class="sr-only">Previous</span>
+ </a>
+ <a class="right carousel-control" href="#myCarousel" data-slide="next">
+ <span class="glyphicon glyphicon-chevron-right"></span>
+ <span class="sr-only">Next</span>
+ </a>
+</div>
+
+CAROUSEL INDICATORS
+These are the dots below the images in carousel which shows which image is selected. It can also be used for navigating.
+WRAPPER FOR SLIDES
+This section conatins the images to be displayed in the carousel.
+LEFT AND RIGHT CONTROLS
+These are the left and right buttons on carousel images.
+
+GLYPHICONS
+The styled icons which we can use in our website as per our needs. For eg. adding social networking buttons.
+
+NAVBAR
+With Bootstrap, a navigation bar can extend or collapse it self, depending on the screen size.
+A standard navigation bar is created with <nav class="navbar navbar-default">. A standard navigation bar is as below.
+
+Code:
+<nav class="navbar navbar-default">
+ <div class="container-fluid">
+ <div class="navbar-header">
+ <a class="navbar-brand" href="#">WebSiteName</a>
+ </div>
+<ul class="nav navbar-nav">
+ <li class="active"><a href="#">Home</a></li>
+<li><a href="#">Page 1</a></li>
+<li><a href="#">Page 2</a></li>
+<li><a href="#">Page 3</a></li>
+</ul>
+ </div>
+</nav>
+
+JUMBOTRON
+A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site. It uses utility classes for typography and spacing to space content out within the larger container. It does not occupy the entire width of the screen and has rounded corners.So to make the jumbotron full width, and without rounded corners, add the .jumbotron-fluid modifier class and add a .container or .container-fluid within.
+<div class="jumbotron jumbotron"> is used to make a normal jumbotron.
+<div class="jumbotron jumbotron-fluid"> is used to make a fluid jumbotron.
+
+

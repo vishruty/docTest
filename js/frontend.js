@@ -12,12 +12,21 @@ function getData(){
         btn.classList.add("hide-me");
         //getting the variables from json file
         var standardNouns = obj.Standard.nouns;
+        var standardAdjectives = obj.Standard.adjectives;
+        var standardVerbs = obj.Standard.verbs;
         var standWordCount = obj.Standard.wordCount;
+
+
         var evalNouns = obj.Eval.nouns;
+        var evalAdjectives = obj.Eval.adjectives;
+        var evalVerbs = obj.Eval.verbs;
         var evalWordCount = obj.Eval.wordCount;
-        var commonNouns = obj.Eval.commonNouns;
-        var percentage = Math.round((commonNouns/standardNouns)*100);
-        //html code that needs to be fired on button click
+
+
+        var status = obj.Result.docStatus;
+        var points = obj.Result.docPoints;
+        var remark = obj.Result.docRemarks;
+       
         var html_code = "<p class = \"new_content\">Comparison complete!!<br> <table id = \"table\"><tr><th>Table</th><th>Word Count</th><th>Nouns<th></tr><tr><th>Your Document</th><td>"+evalWordCount+"</td><td>"+evalNouns+"</td></tr><tr><th>Standard Document</th><td>"+standWordCount+"</td><td>"+standardNouns+"</td></tr></table><br></p><p class = \"new-content\">Your document has<b> "+commonNouns+"</b> common nouns with our standard document.<br>Your final score : <b>"+percentage+"%</b></p>";
         //where the content shall be inserted
         document.getElementById('content').insertAdjacentHTML('afterend', html_code);

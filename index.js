@@ -13,7 +13,6 @@ var defaultCategory = 'N';
 var lexicon = new natural.Lexicon(lexiconFilename, defaultCategory);
 var rules = new natural.RuleSet(rulesFilename);
 var tagger = new natural.BrillPOSTagger(lexicon, rules);
-//pos tagger over
 
 var evalNouns = [];
 var standardNouns = [];
@@ -107,7 +106,7 @@ if(evalLength <= standardLength-range || evalLength >= standardLength+range){
 	points+=(similarAdjectives/standardAdjectives.length)*5;
 
 	points+=(similarVerbs/standardVerbs.length)*5;
-
+  //remarks
 	if(points > 75 && points < 100){
         remarks="Document is good";
      } 
@@ -120,8 +119,8 @@ if(evalLength <= standardLength-range || evalLength >= standardLength+range){
 }
 
 
-end();
-function end(){
+makeJson();
+function makeJson(){
     var score = {
       Standard : 
         {
@@ -139,16 +138,18 @@ function end(){
           verbs : evalVerbs.length
         },
       Result :
-      {
+      {   commonNouns : similarNouns,
+          commonAdjectives : similarAdjectives,
+          commonVerbs : similarVerbs,
           docStatus : status,
           docScore : points,
           docRemarks : remarks
       }
     
     }
-      //object to string
+
   var json = JSON.stringify(score, null, 2);
-  //storing it in .json file
+  
   fs.writeFileSync('output.json',json)
 }
 

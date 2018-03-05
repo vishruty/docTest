@@ -12,6 +12,9 @@
     "verbs": 174
   },
   "Result": {
+    "commonNouns": 283,
+    "commonAdjectives": 41,
+    "commonVerbs": 33,
     "docStatus": "Rejected",
     "docScore": 0,
     "docRemarks": "Document does not satisfy word limit range"
